@@ -68,7 +68,7 @@ our web API project.
     },
     "minimum-stability": "dev",
     "require": {
-        "hyperlink-industries/business-logic": "dev-main"
+        "hyperlink-industries/business-logic": "v1.0"
     },
     "repositories": [
         {
@@ -89,7 +89,6 @@ While installing hyperlink-industries/business-logic Composer symlinks `packages
 |-- packages
 |   `-- business-logic
 |       |-- src
-|       |-- vendor
 |       `-- composer.json
 |-- src
 |-- vendor
@@ -125,7 +124,7 @@ Our folder structure will not change much but the `vendor` directory will now co
 ```json
 {
     "require": {
-        "hyperlink-industries/business-logic": "dev-main"
+        "hyperlink-industries/business-logic": "v1.0"
     },
     "repositories": [
         {
@@ -142,7 +141,6 @@ Our folder structure will not change much but the `vendor` directory will now co
 |   `-- business-logic
 |       |-- .git
 |       |-- src
-|       |-- vendor
 |       `-- composer.json
 |-- src
 |-- vendor
@@ -167,7 +165,7 @@ To start of we change our `composer.json` file to use the git repository as the 
 ```json
 {
     "require": {
-        "hyperlink-industries/business-logic": "dev-main"
+        "hyperlink-industries/business-logic": "v1.0"
     },
     "repositories": [
         {
@@ -203,7 +201,7 @@ Method 3 is a more robust way of managing multiple packages in a single reposito
 
 In conclusion, the choice of method depends on the specific needs of the project and the team's workflow. Personally,
 I prefer Method 3 as it allows for easy versioning of the packages and can be used to manage dependencies across 
-multiple projects. However, for smaller projects or projects that do not require complex dependencies I use Method 1.
+multiple projects. However, for smaller projects or projects that do not require complex dependencies, I use Method 1.
 
 
 ## Notable alternatives
@@ -212,5 +210,7 @@ For those who like to not leave a single stone unturned, there are a few more op
 Maintain a [separate compose.json](https://stackoverflow.com/a/59757746) for development and production environments.
 
 Symlink the packages in the `vendor` directory to the local package directory. This can be automated with [a script](https://gist.github.com/thomashondema/5ae7c51945006e9c76cae55ca36fbc7c) that runs after the `composer install` command.
+
+Define path repositories in the [global composer config](https://prinsfrank.nl/2019/12/27/Using-composer-to-manage-local-dev-paths) and script reverting the `composer.lock` file.
 
 Install with [preferred-install as source](https://getcomposer.org/doc/06-config.md#preferred-install) to make sure you get a clone in your vendor directory. Now you can make changes and develop directly in the vendor directory. Composer update/install might overwrite your changes, so be careful, and push commits frequently.
