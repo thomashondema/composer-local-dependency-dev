@@ -211,29 +211,29 @@ Give the methods a try, adapt them to your workflow, and let me know which appro
 If none of the main methods fit perfectly, there are other ways to streamline local development with multiple Composer packages:
 
 ### 1. Separate configuration files
-- **Maintain a separate `composer.json` for dev and production** – e.g., `composer.dev.json` with path repositories for local development, merged via `composer install --no-scripts -d ./`.
+**Maintain a separate `composer.json` for dev and production** – e.g., `composer.dev.json` with path repositories for local development, merged via `composer install --no-scripts -d ./`.
     - **When to use:** If you want dev-only flexibility without risking production accidentally pointing to local code.
     - [Example from Stack Overflow](https://stackoverflow.com/a/59757746)
 
 ### 2. Symlinking directly
-- **Symlink vendor packages to local directories** – either manually or with a post-install script.
+**Symlink vendor packages to local directories** – either manually or with a post-install script.
     - Can be automated with [this script](https://gist.github.com/thomashondema/5ae7c51945006e9c76cae55ca36fbc7c).
     - **When to use:** Quick-and-dirty local overrides without changing `composer.json`. Works well for solo projects or prototypes.
 
 ### 3. Global Composer config tweaks
-- **Define path repositories in the global Composer config** so they’re available to all projects on your machine.
+**Define path repositories in the global Composer config** so they’re available to all projects on your machine.
     - [Guide here](https://prinsfrank.nl/2019/12/27/Using-composer-to-manage-local-dev-paths)
     - **When to use:** If you frequently work on the same local packages across multiple projects.
 
 ### 4. Preferred install as source
-- **Use `preferred-install: source`** in `composer.json` to get a git clone in `vendor/` instead of a dist package.
+**Use `preferred-install: source`** in `composer.json` to get a git clone in `vendor/` instead of a dist package.
     - Lets you edit code directly in `vendor/` and commit changes upstream.
     - **When to use:** Experimental fixes or small tweaks to dependencies when you don’t want a full dev linking setup.
 
 ### 5. Use `path` repositories with `symlink: false`
-- Even with path repositories, you can set `"options": { "symlink": false }` to copy files instead of linking.
+Even with path repositories, you can set `"options": { "symlink": false }` to copy files instead of linking.
     - **When to use:** If symlinked packages cause IDE or tooling issues but you still want local development.
 
 ### 6. Multi-package monorepo tools
-- Use a dedicated tool like [monorepo-builder](https://github.com/symplify/monorepo-builder) or [composer-monorepo-plugin](https://github.com/beberlei/composer-monorepo-plugin) to manage package splitting, tagging, and dependency resolution in one repository.
+Use a dedicated tool like [monorepo-builder](https://github.com/symplify/monorepo-builder) or [composer-monorepo-plugin](https://github.com/beberlei/composer-monorepo-plugin) to manage package splitting, tagging, and dependency resolution in one repository.
     - **When to use:** Large codebases with many interdependent packages that still need to be versioned and released independently.
