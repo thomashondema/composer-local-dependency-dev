@@ -175,6 +175,34 @@ To start of we change our `composer.json` file to use the git repository as the 
     ]
 }
 ```
+After running `composer install`, the business logic package will be installed in the `vendor` directory as usual 
+but now directly from the version control repository. This is also reflected in the `composer.lock` file so while deploying for 
+production, it will not look for a local package but instead will use the version control repository.
+
+```
+"packages": [
+     {
+         "name": "hyperlink-industries/business-logic",
+         "version": "v1.0.0",
+         "source": {
+             "type": "git",
+             "url": "https://git.example.com/hyperlink-industries/business-logic.git",
+             "reference": "74b42c25051dc2527483a58e94a995913fd53eda"
+         },
+         "type": "library",
+         "autoload": {
+             "psr-4": {
+                 "HyperlinkIndustries\\BusinessLogic\\": "src/"
+             }
+         },
+         "transport-options": {
+             "relative": true
+         }
+     }
+ ]
+```
+
+
 If a developer wants to work on the business logic package, they can clone the repository and link it to the project using the composer-link command.
 ```bash
 git clone https://git.example.com/hyperlink-industries/api.git ./packages/business-logic
@@ -182,7 +210,8 @@ git clone https://git.example.com/hyperlink-industries/api.git ./packages/busine
 composer global require hyperlink-industries/composer-link
 composer global link ./packages/business-logic
 ```
-
+Composer-link will create a symlink in the `vendor` directory that points to the local package directory while 
+leaving the `composer.lock` file intact.
 Because the developer can selectively link packages, this method is more flexible than the previous two methods.
 
 

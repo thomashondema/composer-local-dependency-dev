@@ -8,10 +8,10 @@
     "packages": [
         {
             "name": "hyperlink-industries/business-logic",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./packages/business-logic",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.example.com/hyperlink-industries/business-logic.git",
                 "reference": "74b42c25051dc2527483a58e94a995913fd53eda"
             },
             "type": "library",

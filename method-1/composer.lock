@@ -8,7 +8,7 @@
     "packages": [
         {
             "name": "hyperlink-industries/business-logic",
-            "version": "dev-main",
+            "version": "v1.0.0",
             "dist": {
                 "type": "path",
                 "url": "./packages/business-logic",
