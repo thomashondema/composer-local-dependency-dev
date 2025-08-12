@@ -1,0 +1,3 @@
+[submodule "business-logic"]
+    path = packages/business-logic
+    url =  https://git.example.com/hyperlink-industries/business-logic

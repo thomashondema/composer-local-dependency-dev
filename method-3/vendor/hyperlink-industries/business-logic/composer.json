@@ -1,0 +1,10 @@
+{
+    "name": "hyperlink-industries/business-logic",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "HyperlinkIndustries\\BusinessLogic\\": "src/"
+        }
+    },
+    "require": {}
+}

@@ -1,0 +1,39 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "b54710634bf9b36747d231c551b62926",
+    "packages": [
+        {
+            "name": "hyperlink-industries/business-logic",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/business-logic",
+                "reference": "74b42c25051dc2527483a58e94a995913fd53eda"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "HyperlinkIndustries\\BusinessLogic\\": "src/"
+                }
+            },
+            "transport-options": {
+                "relative": true
+            }
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "hyperlink-industries/business-logic": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

@@ -1,0 +1,19 @@
+{
+    "name": "hyperlink-industries/api",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "HyperlinkIndustries\\Api\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "hyperlink-industries/business-logic": "dev-main"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./packages/business-logic"
+        }
+    ]
+}
