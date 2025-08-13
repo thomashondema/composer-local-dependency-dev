@@ -11,11 +11,11 @@ Learn how to manage multiple Composer packages efficiently using path repositori
 ## The Multi-Package Development Problem
 As projects grow, it’s common to split code into single-purpose, reusable components. In PHP, these are often packaged for installation via Composer. For example, a web API might use a database library, a web framework, and custom packages for core business logic.
 
-Over time, the same business logic may be reused by a web UI, mobile app, or CLI tool. This separation improves maintainability and testability—but it also creates friction. When a change in one package (e.g., adding a new API endpoint) requires updates in another, developers can get stuck in a slow cycle of commits, releases, and version bumps.
+Over time, the same business logic may be reused by a web UI, mobile app, or CLI tool. This separation improves maintainability and testability, but it also creates friction. When a change in one package (e.g., adding a new API endpoint) requires updates in another, developers can get stuck in a slow cycle of commits, releases, and version bumps.
 
 One workaround is to point `composer.json` to a `dev-feature-branch` or local path to work on multiple packages simultaneously. While this speeds up development, it can be clunky and error-prone at scale.
 
-This article explores three efficient ways to manage multiple Composer packages—whether in a single repository or across several—so you can choose the approach that best fits your team and project stage.
+This article explores three efficient ways to manage multiple Composer packages, whether in a single repository or across several, so you can choose the approach that best fits your team and project stage.
 
 ## Composer Packages
 Composer is PHP’s dependency manager for installing, updating, and organizing code packages.
@@ -36,7 +36,7 @@ Each package has a `composer.json` defining its name (`vendor/package-name`), de
 - Skip it for libraries to keep them version-flexible.
 
 ### Repositories
-Composer uses Packagist.org by default, but you can define custom repositories in composer.json—including private servers, VCS repositories, or local paths.
+Composer uses Packagist.org by default, but you can define custom repositories in composer.json including private servers, VCS repositories, or local paths.
 
 
 
@@ -156,7 +156,7 @@ Good for multi-project setups where you want each project to point to a specific
 As the team expands, not everyone works on the same packages. Managing submodules becomes cumbersome, and we need a way to selectively work on local packages without changing `composer.json` or `composer.lock`.
 
 **How it works**  
-We use a Composer plugin like [sandersander/composer-link](https://github.com/SanderSander/composer-link) to override installed packages with local versions via symlinks—without altering dependency definitions. This allows per-developer flexibility.
+We use a Composer plugin like [sandersander/composer-link](https://github.com/SanderSander/composer-link) to override installed packages with local versions via symlinks, without altering dependency definitions. This allows per-developer flexibility.
 
 **Example**
 In `composer.json`, point the package to its Git repository:
@@ -195,7 +195,7 @@ A practical approach is to **start simple**:
 1. Begin with Method 1 during early development to keep momentum high.
 2. Transition to Method 3 as your codebase grows, your packages mature, and multiple projects or teams need to work on them simultaneously.
 
-Choosing the right method isn’t about picking one forever—it’s about matching your workflow to your current scale and evolving the approach as your project evolves.
+Choosing the right method isn’t about picking one forever, it’s about matching your workflow to your current scale and evolving the approach as your project evolves.
 
 ## Try It in Your Own Projects
 Personally, I start with **Method 1 (Path repositories)** for speed and simplicity in the early stages.  
