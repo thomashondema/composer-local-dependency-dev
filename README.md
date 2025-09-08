@@ -176,7 +176,7 @@ In `composer.json`, point the package to its Git repository:
 
 Install the plugin and link the local package:
 ```bash
-composer global require hyperlink-industries/composer-link
+composer global require sandersander/composer-link
 git clone https://git.example.com/hyperlink-industries/business-logic.git ./packages/business-logic
 composer global link ./packages/business-logic
 ```
